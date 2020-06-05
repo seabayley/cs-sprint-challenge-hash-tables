@@ -5,7 +5,6 @@ def get_indices_of_item_weights(weights, length, limit):
             return i, c[v]
         else:
             c[v] = i
-    print(c)
     for i in c:
         if limit - i in c:
             return sorted([c[i], c[limit-i]], reverse=True)
