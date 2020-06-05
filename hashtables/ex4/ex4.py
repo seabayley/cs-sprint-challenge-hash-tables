@@ -1,10 +1,9 @@
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    c = {}
+    for i in sorted(a, reverse=True):
+        c[abs(i)] = False if i > 0 else True if abs(i) in c else False
 
-    return result
+    return [k for (k, v) in c.items() if v == True]
 
 
 if __name__ == "__main__":

@@ -6,9 +6,13 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    c = {}
+    for ticket in tickets:
+        c[ticket.source] = ticket.destination
 
-    return route
+    itenerary = []
+
+    for _ in range(length):
+        itenerary.append(c[itenerary[-1]] if len(itenerary) > 0 else c['NONE'])
+
+    return itenerary
